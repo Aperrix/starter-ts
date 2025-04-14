@@ -1,0 +1,49 @@
+{
+    "name": "placeholder",
+    "type": "module",
+    "version": "0.1.0",
+    "private": true,
+    "packageManager": "pnpm@10.6.5",
+    "description": "placeholder",
+    "author": {
+        "name": "Aperrix",
+        "email": "aperrix@gmail.com"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/antfu/placeholder#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aperrix/placeholder.git"
+    },
+    "bugs": "https://github.com/aperrix/placeholder/issues",
+    "keywords": [],
+    "scripts": {
+        "dev": "tsx watch src/main.ts",
+        "lint": "eslint --fix",
+        "typecheck": "typesync && tsc --noEmit",
+        "prepare": "husky",
+        "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && pnpm nano-staged",
+        "pre-push": "pnpm validate-branch-name",
+        "commit-msg": "pnpm commitlint"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^4.12.0",
+        "@commitlint/cli": "^19.8.0",
+        "@commitlint/config-conventional": "^19.8.0",
+        "@types/node": "^22.14.1",
+        "eslint": "^9.24.0",
+        "husky": "^9.1.7",
+        "jiti": "^2.4.2",
+        "nano-staged": "^0.8.0",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.3",
+        "typesync": "^0.14.3"
+    },
+    "nano-staged": {
+        "*": "eslint --fix --no-warn-ignored"
+    },
+    "validate-branch-name": {
+        "pattern": "^(main|develop){1}$|^(feat|fix|hotfix|release){1}\\/(#[0-9]{1,10}\\/|)[a-z_]+$",
+        "errorMsg": "Branch name must be one of: main|develop or /feat|fix|hotfix|release/#issue-number/branch-name"
+    }
+}

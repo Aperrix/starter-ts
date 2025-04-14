@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "aaron-bond.better-comments",
+        "usernamehw.errorlens",
+        "YoavBls.pretty-ts-errors",
+        "shardulm94.trailing-spaces"
+    ]
+}
