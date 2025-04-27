@@ -50,5 +50,6 @@
     ],
     "cSpell.words": [
         "typesync"
-    ]
+    ],
+    "conventionalCommits.autoCommit": false
 }

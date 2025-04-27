@@ -4,6 +4,7 @@
         "aaron-bond.better-comments",
         "usernamehw.errorlens",
         "YoavBls.pretty-ts-errors",
-        "shardulm94.trailing-spaces"
+        "shardulm94.trailing-spaces",
+        "vivaxy.vscode-conventional-commits"
     ]
 }

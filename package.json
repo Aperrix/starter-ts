@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.1.0",
     "private": true,
-    "packageManager": "pnpm@10.6.5",
+    "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
     "description": "placeholder",
     "author": {
         "name": "Aperrix",
@@ -18,26 +18,31 @@
     "bugs": "https://github.com/aperrix/placeholder/issues",
     "keywords": [],
     "scripts": {
+        "reinstall": "rimraf pnpm-lock.yaml node_modules && pnpm i",
         "dev": "tsx watch src/main.ts",
         "lint": "eslint --fix",
         "typecheck": "typesync && tsc --noEmit",
-        "prepare": "husky",
-        "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && pnpm nano-staged",
-        "pre-push": "pnpm validate-branch-name",
-        "commit-msg": "pnpm commitlint"
+        "prepare": "husky"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^4.12.0",
         "@commitlint/cli": "^19.8.0",
-        "@commitlint/config-conventional": "^19.8.0",
-        "@types/node": "^22.14.1",
-        "eslint": "^9.24.0",
+        "@commitlint/cz-commitlint": "^19.8.0",
+        "@commitlint/types": "^19.8.0",
+        "@types/node": "^22.15.2",
+        "commitizen": "^4.3.1",
+        "commitlint-config-git-commit-emoji": "^1.0.0",
+        "commitlint-config-gitmoji": "^2.3.1",
+        "conventional-changelog-gitmoji-config": "^1.5.2",
+        "eslint": "^9.25.1",
         "husky": "^9.1.7",
         "jiti": "^2.4.2",
         "nano-staged": "^0.8.0",
+        "rimraf": "^6.0.1",
         "tsx": "^4.19.3",
         "typescript": "^5.8.3",
-        "typesync": "^0.14.3"
+        "typesync": "^0.14.3",
+        "validate-branch-name": "^1.3.2"
     },
     "nano-staged": {
         "*": "eslint --fix --no-warn-ignored"
@@ -45,5 +50,10 @@
     "validate-branch-name": {
         "pattern": "^(main|develop){1}$|^(feat|fix|hotfix|release){1}\\/(#[0-9]{1,10}\\/|)[a-z_]+$",
         "errorMsg": "Branch name must be one of: main|develop or /feat|fix|hotfix|release/#issue-number/branch-name"
+    },
+    "config": {
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
     }
 }
